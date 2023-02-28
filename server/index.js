@@ -22,10 +22,22 @@ app.post('/newTeam', (req, res) => {
 });
 
 app.get('/getTeam/:name', (req, res) => {
+  console.log('PARAMS ', req.params.name)
   db.getTeam(req.params.name)
     .then((response) => {
       let team = JSON.stringify(response[0].team);
       res.send(team);
+    })
+    .catch((err) => {
+      console.log('unable to get team, with error: ', err);
+    })
+});
+
+app.get('/getTeams', (req, res) => {
+  db.getTeams()
+    .then((response) => {
+      let teamNames = JSON.stringify(response);
+      res.send(response);
     })
     .catch((err) => {
       console.log('unable to get team, with error: ', err);

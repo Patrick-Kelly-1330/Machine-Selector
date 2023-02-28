@@ -2,3 +2,29 @@ div {
   border: 1px solid black;
   margin: 5px;
 }
+
+/* ====================================
+   Configuration Modal
+   ====================================
+*/
+
+.groupSelection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1em;
+  margin: 0 4em;
+  text-align: center;
+}
+
+.groupSelection select {
+  margin: 0 25em;
+  text-align: center;
+}
+
+.startAnimation {
+  height: 3em;
+  margin: 0 20em;
+  text-align: center;
+  vertical-align: baseline;
+}

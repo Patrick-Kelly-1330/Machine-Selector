@@ -1,13 +1,11 @@
 import React from 'react';
 
-const GroupMembers = ({groupNames }) => {
-
-  const sampleFiller = ['tom','michlle','josh'];
+const GroupMembers = ({ names }) => {
 
   return (
     <div>
       <div className="groupList">{
-        sampleFiller.map((member) => {
+        names.map((member) => {
           return <div>{member}</div>
         })
       }

@@ -16,6 +16,7 @@ module.exports = {
       team: teamList
     })
   },
-  getTeam: (teamName) => Machine.find({name: teamName})
+  getTeam: (teamName) => Machine.find({name: teamName}),
+  getTeams: () => Machine.find({})
 }
 

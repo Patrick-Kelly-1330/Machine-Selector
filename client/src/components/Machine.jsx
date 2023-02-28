@@ -1,12 +1,12 @@
 import React from 'react';
 import GroupMembers from './GroupMembers.jsx';
 
-const Machine = ({ groupNames }) => {
+const Machine = ({ names }) => {
 
   return (
     <div>
       <h1>Machine</h1>
-      <GroupMembers groupNames={groupNames} />
+      <GroupMembers names={names} />
     </div>
   );
 }
