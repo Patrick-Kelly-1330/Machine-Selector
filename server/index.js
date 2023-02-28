@@ -21,11 +21,13 @@ app.post('/newTeam', (req, res) => {
     })
 });
 
+// return list of team members within a specific team
 app.get('/getTeam/:name', (req, res) => {
-  console.log('PARAMS ', req.params.name)
   db.getTeam(req.params.name)
     .then((response) => {
-      let team = JSON.stringify(response[0].team);
+      let names = response[0].team[0].replace('[','');
+      names = names.replace(']','');
+      let team = JSON.stringify(names);
       res.send(team);
     })
     .catch((err) => {
@@ -33,6 +35,7 @@ app.get('/getTeam/:name', (req, res) => {
     })
 });
 
+// return lists of teams in database
 app.get('/getTeams', (req, res) => {
   db.getTeams()
     .then((response) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers, onStart }) => {
+const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers, onStart, onNewGroup }) => {
 
   if (configVisible) {
     return (
@@ -16,7 +16,10 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
               })
             }
             </select>
-            <p className="addNewTeamLink">or add a new team here</p>
+            <p className="addNewTeamLink" onClick={ ()=> {
+              onShowConfig();
+              onNewGroup();
+            }}>or add a new team here</p>
             <h1>Select Duration of Animation</h1>
             <select className="durationOptions">
               <option>5 seconds</option>

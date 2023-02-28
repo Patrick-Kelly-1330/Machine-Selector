@@ -1,14 +1,37 @@
-div {
-  border: 1px solid black;
-  margin: 5px;
-}
-
 /* ====================================
-   Configuration Modal
+   App
    ====================================
 */
 
-.groupSelection {
+#app {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  text-align: center;
+}
+
+
+/* ====================================
+   Selection
+   ====================================
+*/
+
+.newSelection {
+  border: .1em solid gray;
+  padding: 1em 2em;
+  margin: 1em 25em;
+}
+
+.newSelection:hover, button {
+  cursor: pointer;
+}
+
+/* ====================================
+   Configuration Modals
+   ====================================
+*/
+
+.groupSelection, .groupCreation {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,4 +50,41 @@ div {
   margin: 0 20em;
   text-align: center;
   vertical-align: baseline;
+}
+
+.newGroupList {
+  list-style-type: none;
+}
+
+/* ====================================
+   Group Members
+   ====================================
+*/
+
+
+.groupList {
+  display: flex;
+  justify-content: center;
+  height: 5em;
+  padding: 0.5em;
+}
+
+.individual {
+  display: flex;
+  transform: rotate(-90deg);
+}
+
+/* ====================================
+   Congratulations Modal
+   ====================================
+*/
+
+.congratulationsContainer {
+  margin: 0 15em;
+  padding: 2em;
+  border: .1em solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }

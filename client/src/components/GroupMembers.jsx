@@ -6,7 +6,7 @@ const GroupMembers = ({ names }) => {
     <div>
       <div className="groupList">{
         names.map((member) => {
-          return <div>{member}</div>
+          return <div className="individual">{member}</div>
         })
       }
       </div>

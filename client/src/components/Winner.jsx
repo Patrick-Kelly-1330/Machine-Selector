@@ -1,11 +1,19 @@
 import React from 'react';
 
-const Winner = () => {
+const Winner = ({ winnerVisible }) => {
 
-  return (
-    <div>Hello from Winner
-    </div>
-  );
+  if (winnerVisible) {
+    return (
+      <div>
+        <div className="congratulationsContainer">
+          <p className="congratulations">Congratulations</p>
+          <h1 className="winner">Marissa</h1>
+        </div>
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
 
 export default Winner;

@@ -1,11 +1,70 @@
 import React from 'react';
+import { useState } from 'react';
 
-const NewGroup = () => {
+const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup }) => {
 
-  return (
-    <div>Hello from New Group
-    </div>
-  );
+  //TODO: create dynamic list
+  const [newTeam, setNewTeam] = useState([]);
+  const [newTeamName, setNewTeamName] = useState('');
+  const [newName, setNewName] = useState('');
+  const [groupDetails, setGroupDetails] = useState({});
+
+  const onName = (e) => {
+    setNewName(e.target.value);
+  }
+
+  const onNewTeamName = (e) => {
+    setNewTeamName(e.target.value);
+  }
+
+  const onNewMember = (e) => {
+    e.preventDefault();
+    setNewTeam([...newTeam, newName]);
+    setGroupDetails( {
+      name: newTeamName,
+      team: newTeam,
+    })
+    console.log("GROUP INFO IN MODAL ", groupDetails);
+  }
+
+  if (newGroupVisible) {
+    return (
+      <div>
+        <div className="newGroupCongifurationContainer">
+         <div className="groupCreation">
+           <form className="newNameForm">
+            <label>New Group Name
+              <input type="text" onChange={onNewTeamName}/>
+            </label>
+           </form>
+           <form className="newMemberForm">
+            <label>Group Member
+              <input type="text" onChange={onName}/>
+            </label>
+            <input type="submit" value="add new member" onClick={onNewMember}/>
+           </form>
+           <h1>Current Group</h1>
+           <ul className="newGroupList">{
+             newTeam.map((member) => {
+              return <li>{member}</li>
+             })
+           }
+           </ul>
+           <form className="createNewGroup">
+            <label>Create Group
+              <input type="submit" onClick={(e) => {
+                onCreateGroup(e, groupDetails);
+                onNewGroup();
+              }}/>
+            </label>
+           </form>
+         </div>
+        </div>
+      </div>
+    );
+  } else {
+    return null
+  }
 }
 
 export default NewGroup;
