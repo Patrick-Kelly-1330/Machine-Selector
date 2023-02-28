@@ -88,3 +88,162 @@
   justify-content: center;
   text-align: center;
 }
+
+
+
+/* ====================================
+   Machine
+   ====================================
+*/
+
+/* ====================================
+   Dominos and Ball
+   ====================================
+*/
+
+.dominosAndBall {
+  display: flex;
+  column-gap: 1em;
+  margin: 1em 0 0 10em;
+}
+
+.dominoBall {
+  width: 3em;
+  height: 3em;
+  border-radius: 5em;
+  border: .5px solid black;
+  background-color: #dcebf5;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-name: ballMove;
+  animation-fill-mode: forwards;
+}
+
+.dominoBallContainer{
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 0 30em;
+}
+
+
+@keyframes ballMove {
+  from {
+    transform:
+    translateY(0%)
+    translateX(0%)
+  }
+
+  25% {
+    transform:
+    translateY(0%)
+    translateX(-200%)
+  }
+
+  26% {
+    transform:
+    translateY(1%)
+    translateX(-205%)
+  }
+  27% {
+    transform:
+    translateY(2%)
+    translateX(-210%)
+  }
+  28% {
+    transform:
+    translateY(3%)
+    translateX(-220%)
+  }
+  29% {
+    transform:
+    translateY(4%)
+    translateX(-225%)
+  }
+  30% {
+    transform:
+    translateY(5%)
+    translateX(-230%)
+  }
+
+  to {
+    transform:
+    translateY(400%)
+    translateX(-230%)
+  }
+}
+
+.dominosContainer {
+  display: flex;
+  column-gap: 1em;
+}
+
+.dominosContainer div {
+  border: .1em solid #16084b;
+  height: 5em;
+  width: .8em;
+  background-color: #6088ee;
+  animation-name: rotate;
+  animation-fill-mode: forwards;
+}
+
+.dominoJ {
+  animation-delay: 2s;
+  animation-duration: .2s;
+}
+
+.dominoI {
+  animation-delay: 2.1s;
+  animation-duration: .2s;
+}
+
+.dominoH {
+  animation-delay: 2.2s;
+  animation-duration: .2s;
+}
+
+.dominoG {
+  animation-delay: 2.3s;
+  animation-duration: .2s;
+}
+
+.dominoF {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+.dominoE {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+.dominoD {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+.dominoC {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+.dominoB {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+.dominoA {
+  animation-delay: 2.4s;
+  animation-duration: .2s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+    width: .8em;
+    /* box-shadow: .2em .2em .2em rgb(146, 144, 144); */
+    border-left: .2em solid #16084b;
+  }
+}
