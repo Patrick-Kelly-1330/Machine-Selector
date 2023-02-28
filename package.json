@@ -1,11 +1,11 @@
 {
   "name": "template-repo",
   "version": "1.0.0",
-  "description": "Template to initiate an app",
+  "description": "machine to determine a winner",
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack --watch",
-    "start": "nodemon server/index.js",
+    "server-dev": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Patrick Kelly",

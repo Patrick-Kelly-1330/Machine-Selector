@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 
-function main() {
-  // TODO: update [dataseName] with relevant database name
-  mongoose.connect('mongodb://127.0.0.1:27017/[databaseName]');
+mongoose.connect('mongodb://localhost/machine');
 
-  // TODO: build out schema(s)
-  const testSchema = mongoose.Schema({
-  });
+const teamSchema = mongoose.Schema({
+    name: String,
+    team: Array
+});
 
-  // TODO: create relevant models
-  const Test = mongoose.model('TestSchema', testSchema);
+const Machine = mongoose.model('Machine', teamSchema, 'Machine');
 
-  module.exports = Test;
+module.exports = {
+  createTeam: (teamName, teamList) => {
+    return Machine.create({
+      name: teamName,
+      team: teamList
+    })
+  },
+  getTeam: (teamName) => Machine.find({name: teamName})
 }
 
-main();

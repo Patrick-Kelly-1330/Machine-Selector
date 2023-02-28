@@ -1,6 +1,7 @@
-const Test = require('../models');
+const newTeam = require('../models');
 
-const testHandler = () => {
+const createTeam = (teamName, teamList) => {
+  newTeam.createTeam(teamName, teamList);
 };
 
-module.exports = testHandler;
+module.exports = createTeam;

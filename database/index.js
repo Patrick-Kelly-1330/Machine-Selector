@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-// TODO: update [dataseName] with relevant database name
-mongoose.connect('mongodb://localhost/[databaseName]');
+mongoose.connect('mongodb://localhost/machine');
 
 const db = mongoose.connection;
 
