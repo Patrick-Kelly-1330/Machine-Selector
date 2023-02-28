@@ -1,2 +1,2 @@
-# TemplateRepo
-Leverage template to initiate app with react, express, and mongodb
+# Machine Selector
+Build and watch a fun animation to select a name randomnly from a list
