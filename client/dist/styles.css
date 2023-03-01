@@ -1,3 +1,21 @@
+
+/* --- testing
+*/
+
+
+@keyframes moveBox {
+  from {
+    transform:
+    translateY(0%)
+    translateX(0%)
+  }
+  to {
+    transform:
+    translateY(100%)
+    translateX(100%)
+  }
+}
+
 /* ====================================
    Variables
    ====================================
@@ -47,7 +65,7 @@
    ====================================
 */
 
-.configurationContainer, .newGroupCongifurationContainer {
+.configurationContainer, .newGroupCongifurationContainer, .congratulationsContainer {
   background-color: rgb(129, 127, 148, 0.8);
   width: 100%;
   height: 100%;
@@ -59,7 +77,7 @@
   z-index: 9999;
 }
 
-.groupSelection, .groupCreation {
+.groupSelection, .groupCreation, .winnerSelection{
   width: 50em;
   height: 30em;
   position: fixed;
@@ -102,26 +120,34 @@
 */
 
 .groupMemberContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 2em 30em;
+  padding: 0 5em 4em 0;
 }
 
 
 .groupList {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  row-gap: .5em;
+
+}
+
+.individualBucket {
+  width: 6em;
+  height: 2em;
 }
 
 .individual {
-  display: flex;
+  font-size: 15px;
   position: relative;
-  transform: rotate(-90deg);
+  width: 5em;
   border: .1em solid grey;
-  padding: .5em 1.5em;
+  padding: .2em;
   background-color: #161160;
   color: #f7f7f7;
+  margin: 2em;
+  z-index: 5;
 }
 
 /* ====================================
@@ -146,6 +172,42 @@
    ====================================
 */
 
+.machineContainer {
+  position: relative;
+  border: .1em solid rgb(47, 47, 94);
+  display: flex;
+  flex-direction: column;
+  margin: 0em 23em;
+  background-color: #adabce;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dominoShelf {
+  height: 10px;
+  width: 31em;
+  margin: -.4em 0 0 16em;
+  background-color: #c180e7;
+  box-shadow: .2em -.3em .3em #be77e7;
+}
+
+.ballPlatformShelf {
+  height: 10px;
+  width: 29em;
+  margin: -.4em 0 0 0;
+  background-color: #c180e7;
+  box-shadow: .2em -.3em .3em #be77e7;
+}
+
+.rampShelf {
+  height: 10px;
+  width: 20em;
+  margin: -.4em 0 0 27em;
+  background-color: #c180e7;
+  box-shadow: .2em -.3em .3em #be77e7;
+}
+
+
 /* ====================================
    Dominos and Ball
    ====================================
@@ -154,7 +216,7 @@
 .dominosAndBall {
   display: flex;
   column-gap: 1em;
-  margin: 1em 0 0 10em;
+  margin: 1em 0 0 6em;
 }
 
 .dominoBall {
@@ -172,7 +234,7 @@
 .dominoBallContainer{
   display: flex;
   align-items: flex-end;
-  padding: 0 0 0 30em;
+  padding: 0 0 0 13em;
 }
 
 
@@ -215,16 +277,22 @@
     translateX(-230%)
   }
 
+  80% {
+    transform:
+    translateY(520%)
+    translateX(-230%)
+  }
+
   90% {
     transform:
-    translateY(600%)
-    translateX(-230%)
+    translateY(520%)
+    translateX(-300%)
   }
 
   to {
     transform:
-    translateY(600%)
-    translateX(-240%)
+    translateY(520%)
+    translateX(-800%)
   }
 }
 
@@ -234,10 +302,10 @@
 }
 
 .dominosContainer div {
-  border: .1em solid #16084b;
+  border: .2em solid #161160;
+  background-color: #392fc0;
   height: 5em;
   width: .8em;
-  background-color: #6088ee;
   animation-name: dominoFall;
   animation-fill-mode: forwards;
 }
@@ -300,7 +368,7 @@
     transform: rotate(-45deg);
     width: .8em;
     /* box-shadow: .2em .2em .2em rgb(146, 144, 144); */
-    border-left: .2em solid #16084b;
+    border-left: .2em solid #161160;
   }
 }
 
@@ -308,18 +376,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15em 22em 0 0;
+  margin: 10em 12em 0 0;
 }
 
 .platformBox {
-  height: 4em;
-  width: 4em;
+  height: 2em;
+  width: 2em;
   margin: 0 0 -0.5em 6em;
   border: .2em solid #161160;
   background-color: #392fc0;
   transform: rotate(10deg);
   animation-duration: 5s;
-  animation-delay: 8s;
+  animation-delay: 6s;
   animation-name: boxFlip;
   animation-fill-mode: forwards;
 }
@@ -330,7 +398,7 @@
   border: .1em solid #444444;
   background-color: grey;
   transform: rotate(10deg);
-  animation-delay: 8s;
+  animation-delay: 6s;
   animation-name: platformFlip;
   animation-fill-mode: forwards;
 }
@@ -341,7 +409,6 @@
   border: .2em solid #444444;
   background-color: grey;
   border-radius: 5em;
-  x: 40px;
 }
 
 @keyFrames platformFlip {
@@ -367,38 +434,50 @@
 
   30% {
     transform:
-      translate(180px, -180px)
+      translate(180px, -150px)
       rotate(360deg);
   }
 
   40% {
     transform:
-      translate(200px, -200px)
+      translate(200px, -155px)
       rotate(540deg);
   }
 
   50% {
     transform:
-      translate(400px, 200px)
-      rotate(-190deg);
+      translate(210px, -150px)
+      rotate(540deg);
   }
 
   60% {
+    transform:
+      translate(400px, 160px)
+      rotate(-190deg);
+  }
+
+  70% {
     transform:
       translate(360px, 220px)
       rotate(-270deg);
   }
 
-  70% {
+  80% {
     transform:
       translate(320px, 235px)
       rotate(-360deg);
   }
 
-  100% {
+  90% {
     transform:
       translate(280px, 240px)
       rotate(-450deg);
+  }
+
+  100% {
+    transform:
+      translate(300px, 240px)
+      rotate(-540deg);
   }
 }
 
@@ -409,21 +488,21 @@
 
 .rampWithBall {
   display: flex;
-  column-gap: 4em;
+  /* column-gap: 4em; */
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 0em 22em;
+  /* padding: 4em 24em .5em; */
 }
 
 #rampBall {
-  width: 2em;
-  height: 2em;
+  width: 1em;
+  height: 1em;
   margin: 0em 4em;
   border-radius: 5em;
-  border: .5px solid rgb(215, 42, 231);
+  border: .5px solid #d72ae7;
   background-color: #c180e7;
   animation-duration: 5s;
-  animation-delay: 13s;
+  animation-delay: 1s; /* 13*/
   animation-name: decidingBall;
   animation-fill-mode: forwards;
 }
@@ -431,9 +510,8 @@
 .ramp {
   width: 0;
   height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 160px solid grey;
-  border-left: 130px solid transparent
+  border-bottom: 100px solid #d72ae7;
+  border-left: 200px solid transparent
 }
 
 @keyframes decidingBall {
@@ -500,7 +578,7 @@
 
   to {
     transform:
-    translate(-50px, 300px);
+    translate(-50px, 400px);
   }
 }
 
@@ -510,25 +588,29 @@
    ====================================
 */
 
-.pegsContainer {
+.shelfContainer {
   display: flex;
   flex-direction: column;
   row-gap: 5em;
   justify-content: center;
   width: 40em;
-  padding: 5em 30em 5em 30em;
+  padding: 5em 3em;
 }
 
-.pegRow1, .pegRow2, .pegRow3 {
+.shelfRowOne, .shelfRowTwo, .shelfRowThree {
   display: flex;
   justify-content: space-around;
 }
 
-.pegRow1 div, .pegRow2 div, .pegRow3 div{
-  width: .5em;
-  height: .5em;
-  border-radius: 5em;
+.visibleShelf {
   background-color: #16084b;
+  height: .5em;
+  width: 5em;
+  border-radius: 1em;
+}
+
+.hiddenShelf {
+  /* z-index: -20; */
 }
 
 
@@ -554,5 +636,10 @@
   background-color: #6088ee;
   border: .2em solid black;
   border-radius: 5em;
-  z-index: -1;
+  z-index: 1;
+}
+
+.exitWinner {
+  width: 3em;
+  height: 2em;
 }

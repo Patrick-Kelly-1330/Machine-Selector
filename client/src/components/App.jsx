@@ -10,7 +10,6 @@ const App = () => {
 
   const [configVisible, setConfigVisible] = useState(false);
   const [newGroupVisible, setNewGroupVisible] = useState(false);
-  // TODO: update status of winnerVisible to true once machine has ended animation
   const [winnerVisible, setWinnerVisible] = useState(false);
   const [groupList, setGroupList] = useState([]);
   const [names, setNames] = useState([]);
@@ -55,7 +54,7 @@ const App = () => {
       console.log('first ', winningMember);
       setWinner(winningMember);
       const findWinnerBucket = document.getElementById(winningMember);
-      findWinnerBucket.style.zIndex = "-10";
+      findWinnerBucket.style.zIndex = "1";
       const offsetTopWinner = findWinnerBucket.offsetTop;
       const offsetLeftWinner = findWinnerBucket.offsetLeft;
   }, 10000);
@@ -109,8 +108,7 @@ const App = () => {
         onNewGroup={onNewGroup}
       />
       <NewGroup newGroupVisible={newGroupVisible} onNewGroup={onNewGroup} onCreateGroup={onCreateGroup}/>
-      <Winner winnerVisible={winnerVisible} winner={winner}/>
-      <div className="winnerPin"/>
+      <Winner winnerVisible={winnerVisible} winner={winner} setWinnerVisible={setWinnerVisible}/>
     </div>
   );
 }

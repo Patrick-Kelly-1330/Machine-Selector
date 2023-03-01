@@ -1,13 +1,17 @@
 import React from 'react';
 
-const Winner = ({ winnerVisible, winner }) => {
-  console.log("WI ", winnerVisible)
+const Winner = ({ winnerVisible, winner, setWinnerVisible}) => {
   if (winnerVisible) {
     return (
       <div>
         <div className="congratulationsContainer">
-          <p className="congratulations">Congratulations</p>
-          <h1 className="winner">{winner}</h1>
+          <div className="winnerSelection">
+            <p className="congratulations">Congratulations</p>
+            <h1 className="winner">{winner}</h1>
+          </div>
+          <button className="exitWinner" onClick={ () => {
+              setWinnerVisible(!winnerVisible)
+            }}>New Decision</button>
         </div>
       </div>
     );
