@@ -6,7 +6,7 @@ const Machine = ({ names }) => {
   return (
     <div>
       <h1>Machine</h1>
-      <div className="machineContainer">
+      < div className="machineContainer">
         <div className="dominosAndBall">
           <div className="dominoBallContainer">
             <div className="dominoBall"/>
@@ -24,13 +24,44 @@ const Machine = ({ names }) => {
             <div className='dominoJ'></div>
           </div>
         </div>
-        <div className="boxWithPlatform">
+        <div className="boxWithPlatformContainer">
+          <div className="platformBox"/>
+          <div className="platform"/>
+          <div className="platformBall"/>
         </div>
         <div className="rampWithBall">
+          <div id="rampBall"/>
+          <div className="ramp">
+            <div className="rampRight"/>
+          </div>
         </div>
-        <div className="pegs">
+        <div className="pegsContainer">
+          <div className="pegRow1">
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+          </div>
+          <div className="pegRow2">
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+          </div>
+          <div className="pegRow3">
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+          </div>
         </div>
-        <GroupMembers names={names} />
+        <div className='groupMemberContainer'>
+          <GroupMembers names={names} />
+        </div>
       </div>
     </div>
   );

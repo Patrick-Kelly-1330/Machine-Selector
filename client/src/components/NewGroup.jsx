@@ -44,12 +44,12 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup }) => {
             <input type="submit" value="add new member" onClick={onNewMember}/>
            </form>
            <h1>Current Group</h1>
-           <ul className="newGroupList">{
+           <div className="newGroupList">{
              newTeam.map((member) => {
-              return <li>{member}</li>
+              return <div>{member}</div>
              })
            }
-           </ul>
+           </div>
            <form className="createNewGroup">
             <label>Create Group
               <input type="submit" onClick={(e) => {

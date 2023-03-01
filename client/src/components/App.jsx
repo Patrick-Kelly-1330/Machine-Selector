@@ -14,6 +14,7 @@ const App = () => {
   const [winnerVisible, setWinnerVisible] = useState(false);
   const [groupList, setGroupList] = useState([]);
   const [names, setNames] = useState([]);
+  const [winner, setWinner] = useState('');
 
   const onShowConfig = () => {
     setConfigVisible(!configVisible);
@@ -37,7 +38,6 @@ const App = () => {
       params: {name: groupNameSelected}
     })
       .then((response) => {
-        console.log('response ', response.data);
         let names = response.data.split(',')
         let collectNames = [];
         names.map((name) => {
@@ -49,7 +49,16 @@ const App = () => {
   }
 
   const onStart = () => {
-    console.log('names ', names);
+    setTimeout(() => {
+      const randomeInteger = Math.floor(Math.random() * names.length);
+      const winningMember = names[randomeInteger];
+      console.log('first ', winningMember);
+      setWinner(winningMember);
+      const findWinnerBucket = document.getElementById(winningMember);
+      findWinnerBucket.style.zIndex = "-10";
+      const offsetTopWinner = findWinnerBucket.offsetTop;
+      const offsetLeftWinner = findWinnerBucket.offsetLeft;
+  }, 10000);
   }
 
   const onNewGroup = () => {
@@ -79,6 +88,14 @@ const App = () => {
     getGroupNames();
   }, []);
 
+  useEffect (() => {
+    if (winner.length > 0) {
+      setTimeout(() => {
+       setWinnerVisible(!winnerVisible);
+     }, 100);
+    }
+  }, [winner])
+
   return (
     <div>
       <div className="newSelection" onClick={onShowConfig}>New Animation</div>
@@ -92,7 +109,8 @@ const App = () => {
         onNewGroup={onNewGroup}
       />
       <NewGroup newGroupVisible={newGroupVisible} onNewGroup={onNewGroup} onCreateGroup={onCreateGroup}/>
-      <Winner winnerVisible={winnerVisible} />
+      <Winner winnerVisible={winnerVisible} winner={winner}/>
+      <div className="winnerPin"/>
     </div>
   );
 }
