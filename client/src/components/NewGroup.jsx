@@ -33,7 +33,7 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) 
         <div className="newGroupCongifurationContainer">
          <div className="groupCreation">
            <div className="exitContainer">
-             <button className="exit" value="x" onClick={() => {
+             <button className="submit" className="exit" value="x" onClick={() => {
                 onNewGroup();
                 onShowConfig();
               }}/>
@@ -47,7 +47,7 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) 
             <label>Group Member
               <input type="text" onChange={onName}/>
             </label>
-            <input type="submit" value="add new member" onClick={onNewMember}/>
+            <input className="submit" type="submit" value="add new member" onClick={onNewMember}/>
            </form>
            <h1>Current Group</h1>
            <div className="newGroupList">{
@@ -58,7 +58,7 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) 
            </div>
            <form className="createNewGroup">
             <label>Create Group
-              <input type="submit" onClick={(e) => {
+              <input className="submit" type="submit" onClick={(e) => {
                 onCreateGroup(e, groupDetails);
                 onNewGroup();
               }}/>

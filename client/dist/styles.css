@@ -49,14 +49,14 @@ body {
 .newSelection {
   border: .1em solid gray;
   padding: 1em 2em;
-  margin: 2em 37em;
+  margin: 2em 44em;
   border-radius: .5em;
   background-color: #e5e8f5;
   color: #0b0a1f;
   font-size: 15px;
 }
 
-.newSelection:hover, button {
+.newSelection:hover, button:hover, .submit:hover {
   background-color: #bdc0cd;
   cursor: pointer;
 }
@@ -72,7 +72,7 @@ body {
   font-weight: bold;
 }
 
-.configurationContainer, .newGroupCongifurationContainer, .congratulationsContainer {
+.configurationContainer, .newGroupCongifurationContainer {
   background-color: rgb(129, 127, 148, 0.8);
   width: 100%;
   height: 100%;
@@ -83,6 +83,18 @@ body {
   top: 0;
   z-index: 9999;
 }
+.congratulationsContainer {
+  background-color: #0b0a1f;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
 
 .groupSelection, .groupCreation {
   width: 50em;
@@ -113,7 +125,8 @@ body {
   top: 220px;
   right: 0;
   bottom: 0;
-  background-color: #f7f7f7;
+  background-color: #e5ecf6;
+  color: #161160;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,12 +156,14 @@ body {
 }
 
 .addNewTeamLink {
-  color: #392fc0;
+  color: #797878;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .addNewTeamLink:hover {
   cursor: pointer;
-  color: #6e65ec;
+  color: #3c3c3d;
 }
 
 .exitContainer {
@@ -172,6 +187,10 @@ body {
 
 .groupMemberContainer {
   padding: 0 5em 4em 0;
+  /* background-color: rgb(184, 197, 246); */
+  background-color: #3b3f4f;
+  /* background-color: rgb(109, 109, 112); */
+  z-index: 3;
 }
 
 
@@ -193,9 +212,10 @@ body {
   font-size: 15px;
   position: relative;
   width: 5em;
-  border: .1em solid grey;
+  border: .1em solid #161160;
   padding: .2em;
-  background-color: #161160;
+  border-radius: .2em;
+  background-color: #0b0a1f;
   color: #f7f7f7;
   margin: 2em;
   z-index: 5;
@@ -230,7 +250,7 @@ body {
 
 .machineContainer {
   position: relative;
-  border: .3em solid #2f2f5e;
+  border: .1em solid #dedee4;
   border-radius: .3em;
   display: flex;
   flex-direction: column;
@@ -239,11 +259,6 @@ body {
   z-index: 0;
   overflow: hidden;
 }
-
-/* .demo-wrap {
-  overflow: hidden;
-  position: relative;
-} */
 
 .backgroundImage {
   opacity: 40%;
@@ -262,10 +277,13 @@ body {
 
 .dominoShelf {
   height: .8em;
-  width: 31em;
+  width: 33em;
   margin: -.4em 0 0 16em;
   background-color: #2e2e37;
   /* box-shadow: .2em -.3em .3em #403f40; */
+  /* border-top: 0.1em solid #dedee4; */
+  border-left: 0.1em solid #dedee4;
+  border-bottom:  0.18em solid #7c7c8b;
   position: relative;
 }
 
@@ -275,14 +293,21 @@ body {
   margin: -.4em 0 0 0;
   background-color: #2e2e37;
   /* box-shadow: .2em -.3em .3em #403f40; */
+  border-top: 0.05em solid #dedee4;
+  border-right: 0.1em solid #dedee4;
+  border-bottom:  0.18em solid #7c7c8b;
 }
 
 .rampShelf {
   height: .8em;
-  width: 20em;
+  width: 22em;
   margin: -.4em 0 0 27em;
   background-color: #2e2e37;
   /* box-shadow: .2em -.3em .3em #403f40; */
+  /* border-top: 0.1em solid #dedee4; */
+  border-top: 0.05em solid #dedee4;
+  border-left: 0.1em solid #dedee4;
+  border-bottom:  0.18em solid #7c7c8b;
 }
 
 
@@ -311,7 +336,7 @@ body {
 
 .dominoBallAnimate {
   animation-duration: 5s;
-  animation-delay: 3s;
+  animation-delay: 2.3s;
   animation-name: ballMove;
   animation-fill-mode: forwards;
 }
@@ -330,19 +355,25 @@ body {
     translateX(0%)
   }
 
+  5% {
+    transform:
+    translateY(3%)
+    translateX(-200%)
+  }
+
   10% {
     transform:
     translateY(5%)
     translateX(-230%)
   }
 
-  30% {
+  20% {
     transform:
     translateY(530%)
     translateX(-230%)
   }
 
-  40% {
+  30% {
     transform:
     translateY(590%)
     translateX(-360%)
@@ -351,7 +382,7 @@ body {
   to {
     transform:
     translateY(590%)
-    translateX(-620%)
+    translateX(-720%)
   }
 }
 
@@ -394,6 +425,7 @@ body {
 .dominosContainer {
   display: flex;
   column-gap: 1em;
+  margin: 0 0 -3em;
 }
 
 .dominosContainer div {
@@ -406,70 +438,70 @@ body {
 .dominoJAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 1.3s;
   animation-duration: .2s;
 }
 
 .dominoIAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.1s;
+  animation-delay: 1.4s;
   animation-duration: .2s;
 }
 
 .dominoHAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.2s;
+  animation-delay: 1.5s;
   animation-duration: .2s;
 }
 
 .dominoGAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.3s;
+  animation-delay: 1.6s;
   animation-duration: .2s;
 }
 
 .dominoFAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 1.7s;
   animation-duration: .2s;
 }
 
 .dominoEAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 1.8s;
   animation-duration: .2s;
 }
 
 .dominoDAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 1.9s;
   animation-duration: .2s;
 }
 
 .dominoCAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 2s;
   animation-duration: .2s;
 }
 
 .dominoBAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 2.1s;
   animation-duration: .2s;
 }
 
 .dominoAAnimate {
   animation-name: dominoFall;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 2.2s;
   animation-duration: .2s;
 }
 
@@ -481,7 +513,8 @@ body {
   to {
     transform: rotate(-60deg);
     width: .8em;
-    /* box-shadow: .2em .2em .2em rgb(146, 144, 144); */
+    height: 5.5em;
+    box-shadow: 0.05em .4em .6em rgb(28 29 55);
     border-left: .2em solid #161160;
   }
 }
@@ -504,7 +537,7 @@ body {
 
 .platformBoxAnimate {
   animation-duration: 3s;
-  animation-delay: 6s;
+  animation-delay: 3.2s;
   animation-name: boxFlip;
   animation-fill-mode: forwards;
 }
@@ -518,7 +551,7 @@ body {
 }
 
 .platformAnimate {
-  animation-delay: 6s;
+  animation-delay: 3.2s;
   animation-name: platformFlip;
   animation-fill-mode: forwards;
 }
@@ -560,13 +593,13 @@ body {
 
   50% {
     transform:
-      translate(240px, 120px)
+      translate(240px, 125px)
       rotate(-270deg);
   }
 
   100% {
     transform:
-      translate(160px, 120px)
+      translate(160px, 125px)
       rotate(-540deg);
   }
 }
@@ -595,7 +628,7 @@ body {
 
 .rampBallAnimate {
   animation-duration: 4s;
-  animation-delay: 8s;
+  animation-delay: 5.5s;
   animation-name: decidingBall;
   animation-fill-mode: forwards;
 }
@@ -705,9 +738,10 @@ body {
 }
 
 .visibleShelf {
-  border: .2em solid #2e2e37;
+  border-top:  0.1em solid #dedee4;
+  border-bottom:  0.1em solid #7c7c8b;
   background-color: #2e2e37;
-  height: .4em;
+  height: .5em;
   width: 5em;
   border-radius: 1em;
 }

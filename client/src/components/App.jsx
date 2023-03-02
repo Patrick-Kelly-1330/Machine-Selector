@@ -59,7 +59,7 @@ const App = () => {
       findWinnerBucket.style.zIndex = "1";
       const offsetTopWinner = findWinnerBucket.offsetTop;
       const offsetLeftWinner = findWinnerBucket.offsetLeft;
-  }, 12000);
+  }, 9200);
     const animateTipper = document.getElementById("DT");
     const animateDominos = document.getElementById("DO");
     const animateBall = document.getElementById("DB");
@@ -128,7 +128,7 @@ const App = () => {
     if (winner.length > 0) {
       setTimeout(() => {
        setWinnerVisible(!winnerVisible);
-     }, 2000);
+     }, 1200);
     }
   }, [winner])
 

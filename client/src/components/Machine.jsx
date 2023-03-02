@@ -7,7 +7,6 @@ const Machine = ({ names }) => {
   return (
     <div>
       <div className="machineContainer">
-        <div className="demo-wrap">
           <img className="backgroundImage" src={factory}/>
         <div className="dominosAndBall">
           <div className="dominoBallContainer">
@@ -67,7 +66,6 @@ const Machine = ({ names }) => {
         </div>
         <div className='groupMemberContainer'>
           <GroupMembers names={names} />
-        </div>
         </div>
       </div>
     </div>
