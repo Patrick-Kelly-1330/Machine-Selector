@@ -57,7 +57,39 @@ const App = () => {
       findWinnerBucket.style.zIndex = "1";
       const offsetTopWinner = findWinnerBucket.offsetTop;
       const offsetLeftWinner = findWinnerBucket.offsetLeft;
-  }, 10000);
+  }, 12000);
+    const animateDominos = document.getElementById("DO");
+    const animateBall = document.getElementById("DB");
+    const animatePlatform = document.getElementById("PF");
+    const animatePlatformBox = document.getElementById("PB");
+    const animateRampBall = document.getElementById("rampBall");
+
+    const animateDominoA = document.getElementById("A");
+    const animateDominoB = document.getElementById("B");
+    const animateDominoC = document.getElementById("C");
+    const animateDominoD = document.getElementById("D");
+    const animateDominoE = document.getElementById("E");
+    const animateDominoF = document.getElementById("F");
+    const animateDominoG = document.getElementById("G");
+    const animateDominoH = document.getElementById("H");
+    const animateDominoI = document.getElementById("I");
+    const animateDominoJ = document.getElementById("J");
+
+    animateBall.classList.add('dominoBallAnimate');
+    animatePlatform.classList.add('platformAnimate');
+    animatePlatformBox.classList.add('platformBoxAnimate');
+    animateRampBall.classList.add('rampBallAnimate');
+
+    animateDominoA.classList.add('dominoAAnimate');
+    animateDominoB.classList.add('dominoBAnimate');
+    animateDominoC.classList.add('dominoCAnimate');
+    animateDominoD.classList.add('dominoDAnimate');
+    animateDominoE.classList.add('dominoEAnimate');
+    animateDominoF.classList.add('dominoFAnimate');
+    animateDominoG.classList.add('dominoGAnimate');
+    animateDominoH.classList.add('dominoHAnimate');
+    animateDominoI.classList.add('dominoIAnimate');
+    animateDominoJ.classList.add('dominoJAnimate');
   }
 
   const onNewGroup = () => {
@@ -91,7 +123,7 @@ const App = () => {
     if (winner.length > 0) {
       setTimeout(() => {
        setWinnerVisible(!winnerVisible);
-     }, 100);
+     }, 2000);
     }
   }, [winner])
 

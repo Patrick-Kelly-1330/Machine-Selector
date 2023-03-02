@@ -1,5 +1,6 @@
 import React from 'react';
 import GroupMembers from './GroupMembers.jsx';
+import factory from '../../dist/factory.png';
 
 const Machine = ({ names }) => {
 
@@ -7,27 +8,29 @@ const Machine = ({ names }) => {
     <div>
       <h1>Machine</h1>
       <div className="machineContainer">
+        <div className="demo-wrap">
+          <img className="backgroundImage" src={factory}/>
         <div className="dominosAndBall">
           <div className="dominoBallContainer">
-            <div className="dominoBall"/>
+            <div className="dominoBall" id="DB"/>
           </div>
-          <div className="dominosContainer">
-            <div className='dominoA'></div>
-            <div className='dominoB'></div>
-            <div className='dominoC'></div>
-            <div className='dominoD'></div>
-            <div className='dominoE'></div>
-            <div className='dominoF'></div>
-            <div className='dominoG'></div>
-            <div className='dominoH'></div>
-            <div className='dominoI'></div>
-            <div className='dominoJ'></div>
+          <div className="dominosContainer" id="DO">
+            <div className='dominoA' id="A"></div>
+            <div className='dominoB' id="B"></div>
+            <div className='dominoC' id="C"></div>
+            <div className='dominoD' id="D"></div>
+            <div className='dominoE' id="E"></div>
+            <div className='dominoF' id="F"></div>
+            <div className='dominoG' id="G"></div>
+            <div className='dominoH' id="H"></div>
+            <div className='dominoI' id="I"></div>
+            <div className='dominoJ' id="J"></div>
           </div>
         </div>
         <div className="dominoShelf"/>
         <div className="boxWithPlatformContainer">
-          <div className="platformBox"/>
-          <div className="platform"/>
+          <div className="platformBox" id="PB"/>
+          <div className="platform" id="PF"/>
           <div className="platformBall"/>
         </div>
         <div className="ballPlatformShelf"/>
@@ -64,6 +67,7 @@ const Machine = ({ names }) => {
         </div>
         <div className='groupMemberContainer'>
           <GroupMembers names={names} />
+        </div>
         </div>
       </div>
     </div>
