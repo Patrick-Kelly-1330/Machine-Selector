@@ -6,7 +6,6 @@ const Machine = ({ names }) => {
 
   return (
     <div>
-      <h1>Machine</h1>
       <div className="machineContainer">
         <div className="demo-wrap">
           <img className="backgroundImage" src={factory}/>

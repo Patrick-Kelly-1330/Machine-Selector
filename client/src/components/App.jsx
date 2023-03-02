@@ -134,7 +134,7 @@ const App = () => {
 
   return (
     <div>
-      <div className="newSelection" onClick={onShowConfig}>New Animation</div>
+      <div className="newSelection" onClick={onShowConfig}>New Selection</div>
       <Machine names={names}/>
       <Configuration
         configVisible={configVisible}
