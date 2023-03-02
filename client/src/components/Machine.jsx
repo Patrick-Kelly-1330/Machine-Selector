@@ -26,6 +26,7 @@ const Machine = ({ names }) => {
             <div className='dominoI' id="I"></div>
             <div className='dominoJ' id="J"></div>
           </div>
+          <div className="dominoTipper" id="DT" />
         </div>
         <div className="dominoShelf"/>
         <div className="boxWithPlatformContainer">

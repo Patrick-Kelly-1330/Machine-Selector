@@ -54,10 +54,13 @@ const App = () => {
       console.log('first ', winningMember);
       setWinner(winningMember);
       const findWinnerBucket = document.getElementById(winningMember);
+      const winningBall = document.getElementById("rampBall");
+      winningBall.remove();
       findWinnerBucket.style.zIndex = "1";
       const offsetTopWinner = findWinnerBucket.offsetTop;
       const offsetLeftWinner = findWinnerBucket.offsetLeft;
   }, 12000);
+    const animateTipper = document.getElementById("DT");
     const animateDominos = document.getElementById("DO");
     const animateBall = document.getElementById("DB");
     const animatePlatform = document.getElementById("PF");
@@ -75,10 +78,12 @@ const App = () => {
     const animateDominoI = document.getElementById("I");
     const animateDominoJ = document.getElementById("J");
 
+    animateTipper.classList.add('dominoTipperAnimate');
     animateBall.classList.add('dominoBallAnimate');
     animatePlatform.classList.add('platformAnimate');
     animatePlatformBox.classList.add('platformBoxAnimate');
     animateRampBall.classList.add('rampBallAnimate');
+
 
     animateDominoA.classList.add('dominoAAnimate');
     animateDominoB.classList.add('dominoBAnimate');
@@ -139,7 +144,7 @@ const App = () => {
         onStart={onStart}
         onNewGroup={onNewGroup}
       />
-      <NewGroup newGroupVisible={newGroupVisible} onNewGroup={onNewGroup} onCreateGroup={onCreateGroup}/>
+      <NewGroup newGroupVisible={newGroupVisible} onNewGroup={onNewGroup} onCreateGroup={onCreateGroup} onShowConfig={onShowConfig}/>
       <Winner winnerVisible={winnerVisible} winner={winner} setWinnerVisible={setWinnerVisible}/>
     </div>
   );

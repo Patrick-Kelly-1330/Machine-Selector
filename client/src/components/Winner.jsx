@@ -5,13 +5,15 @@ const Winner = ({ winnerVisible, winner, setWinnerVisible}) => {
     return (
       <div>
         <div className="congratulationsContainer">
-          <div className="winnerSelection">
-            <p className="congratulations">Congratulations</p>
-            <h1 className="winner">{winner}</h1>
+          <div className="winnerBorder">
+            <div className="winnerSelection">
+              <p className="congratulations">Congratulations</p>
+              <h1 className="winner">{winner}</h1>
+            </div>
+            <button className="exitWinner" onClick={ () => {
+                setWinnerVisible(!winnerVisible)
+              }}>exit</button>
           </div>
-          <button className="exitWinner" onClick={ () => {
-              setWinnerVisible(!winnerVisible)
-            }}>New Decision</button>
         </div>
       </div>
     );

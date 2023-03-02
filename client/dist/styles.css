@@ -1,3 +1,13 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+p {
+  font-size: 15px;
+  font-style: bold;
+}
+
 /* ====================================
    Variables
    ====================================
@@ -47,6 +57,12 @@
    ====================================
 */
 
+.testingFont {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .configurationContainer, .newGroupCongifurationContainer, .congratulationsContainer {
   background-color: rgb(129, 127, 148, 0.8);
   width: 100%;
@@ -59,12 +75,33 @@
   z-index: 9999;
 }
 
-.groupSelection, .groupCreation, .winnerSelection{
+.groupSelection, .groupCreation {
   width: 50em;
   height: 30em;
   position: fixed;
   left: 280px;
   top: 200px;
+  right: 0;
+  bottom: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: .5em;
+  border: .1em solid #161160;
+  row-gap: 1em;
+  margin: 0 4em;
+  z-index: 3;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.winnerSelection{
+  width: 30em;
+  height: 15em;
+  position: fixed;
+  left: 480px;
+  top: 220px;
   right: 0;
   bottom: 0;
   background-color: #f7f7f7;
@@ -94,6 +131,29 @@
 
 .newGroupList {
   list-style-type: none;
+}
+
+.addNewTeamLink {
+  color: #392fc0;
+}
+
+.addNewTeamLink:hover {
+  cursor: pointer;
+  color: #6e65ec;
+}
+
+.exitContainer {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.exit {
+  border: .2em solid #161160;
+  width: 2em;
+  height: 2em;
+  border-radius: 1.5em;
+  font-size: 10px;
 }
 
 /* ====================================
@@ -138,13 +198,20 @@
 */
 
 .congratulationsContainer {
-  margin: 0 15em;
+  /* margin: 0 15em; */
   padding: 2em;
   border: .1em solid gray;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.gearIcon {
+  width: 260px;
+  width: 260px;
+  margin: 1em 16.5em 0;
+  opacity: 45%;
 }
 
 /* ====================================
@@ -154,7 +221,8 @@
 
 .machineContainer {
   position: relative;
-  border: .1em solid rgb(47, 47, 94);
+  border: .3em solid #2f2f5e;
+  border-radius: .3em;
   display: flex;
   flex-direction: column;
   margin: 0em 23em;
@@ -163,10 +231,10 @@
   overflow: hidden;
 }
 
-.demo-wrap {
+/* .demo-wrap {
   overflow: hidden;
   position: relative;
-}
+} */
 
 .backgroundImage {
   opacity: 40%;
@@ -177,28 +245,35 @@
   height: 100%;
 }
 
+/*handle display of element to display against background image*/
+.platformBox, .platform, .platformBall, .ballPlatformShelf, .ramp, #rampBall, .visibleShelf, .rampShelf {
+  position: relative;
+}
+
+
 .dominoShelf {
-  height: 10px;
+  height: .8em;
   width: 31em;
   margin: -.4em 0 0 16em;
-  background-color: #c180e7;
-  box-shadow: .2em -.3em .3em #be77e7;
+  background-color: #2e2e37;
+  /* box-shadow: .2em -.3em .3em #403f40; */
+  position: relative;
 }
 
 .ballPlatformShelf {
-  height: 10px;
+  height: .8em;
   width: 29em;
   margin: -.4em 0 0 0;
-  background-color: #c180e7;
-  box-shadow: .2em -.3em .3em #be77e7;
+  background-color: #2e2e37;
+  /* box-shadow: .2em -.3em .3em #403f40; */
 }
 
 .rampShelf {
-  height: 10px;
+  height: .8em;
   width: 20em;
   margin: -.4em 0 0 27em;
-  background-color: #c180e7;
-  box-shadow: .2em -.3em .3em #be77e7;
+  background-color: #2e2e37;
+  /* box-shadow: .2em -.3em .3em #403f40; */
 }
 
 
@@ -208,6 +283,7 @@
 */
 
 .dominosAndBall {
+  width: 400em;
   display: flex;
   column-gap: 1em;
   margin: 1em 0 0 6em;
@@ -216,11 +292,12 @@
 }
 
 .dominoBall {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   border-radius: 5em;
-  border: .5px solid black;
+  border: .15em solid black;
   background-color: #dcebf5;
+  position: relative;
 }
 
 .dominoBallAnimate {
@@ -244,54 +321,60 @@
     translateX(0%)
   }
 
-  25% {
-    transform:
-    translateY(0%)
-    translateX(-200%)
-  }
-
-  26% {
-    transform:
-    translateY(1%)
-    translateX(-205%)
-  }
-  27% {
-    transform:
-    translateY(2%)
-    translateX(-210%)
-  }
-  28% {
-    transform:
-    translateY(3%)
-    translateX(-220%)
-  }
-  29% {
-    transform:
-    translateY(4%)
-    translateX(-225%)
-  }
-  30% {
+  10% {
     transform:
     translateY(5%)
     translateX(-230%)
   }
 
-  70% {
+  30% {
     transform:
-    translateY(460%)
+    translateY(530%)
     translateX(-230%)
   }
 
-  80% {
+  40% {
     transform:
-    translateY(465%)
-    translateX(-300%)
+    translateY(590%)
+    translateX(-360%)
   }
 
   to {
     transform:
-    translateY(470%)
-    translateX(-720%)
+    translateY(590%)
+    translateX(-620%)
+  }
+}
+
+.dominoTipper {
+  border-top: .2em solid #2e2e37;
+  border-left: .2em solid #2e2e37;
+  border-bottom: .2em solid #2e2e37;
+  border-right: .3em solid #2e2e37;
+  background-color: #dcebf5;
+  height: 1em;
+  width: 15em;
+  margin: 2em 0;
+}
+
+.dominoTipperAnimate {
+  animation-duration: .5s;
+  animation-delay: 1s;
+  animation-name: tipMove;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tipMove {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-20px, 0px);
+  }
+
+  to {
+    transform: translate(50px, 0px);
   }
 }
 
@@ -401,8 +484,8 @@
   height: 2em;
   width: 2em;
   margin: 0 0 -0.5em 6em;
-  border: .2em solid #161160;
-  background-color: #392fc0;
+  border: .15em solid black;
+  background-color: #dcebf5;
   transform: rotate(10deg);
 }
 
@@ -417,7 +500,7 @@
   height: .5em;
   width: 10em;
   border: .1em solid #444444;
-  background-color: grey;
+  background-color: rgb(53, 52, 52);
   transform: rotate(10deg);
 }
 
@@ -430,8 +513,8 @@
 .platformBall {
   height: 1em;
   width: 1em;
-  border: .2em solid #444444;
-  background-color: grey;
+  border: .1em solid #444444;
+  background-color: #392fc0;
   border-radius: 5em;
 }
 
@@ -458,7 +541,7 @@
 
   40% {
     transform:
-      translate(400px, 60px)
+      translate(400px, 40px)
       rotate(270deg);
   }
 
@@ -493,22 +576,21 @@
   height: 1em;
   margin: 0em 4em;
   border-radius: 5em;
-  border: .5px solid #d72ae7;
-  background-color: #c180e7;
+  border: .15em solid black;
+  background-color: #dcebf5;
 }
 
 .rampBallAnimate {
   animation-duration: 4s;
-  animation-delay: 1s; /* 8*/
+  animation-delay: 8s;
   animation-name: decidingBall;
-  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
 
 .ramp {
   width: 0;
   height: 0;
-  border-bottom: 100px solid #d72ae7;
+  border-bottom: 100px solid #2e2e37;
   border-left: 200px solid transparent
 }
 
@@ -584,7 +666,7 @@
 
   to {
     transform:
-    translate(-50px, 400px);
+    translate(-50px, 600px);
   }
 }
 
@@ -601,6 +683,7 @@
   justify-content: center;
   width: 40em;
   padding: 5em 3em;
+  position: relative;
 }
 
 .shelfRowOne, .shelfRowTwo, .shelfRowThree {
@@ -609,16 +692,12 @@
 }
 
 .visibleShelf {
-  background-color: #16084b;
-  height: .5em;
+  border: .2em solid #2e2e37;
+  background-color: #2e2e37;
+  height: .4em;
   width: 5em;
   border-radius: 1em;
 }
-
-.hiddenShelf {
-  /* z-index: -20; */
-}
-
 
 /* ====================================
    Winner Pin
@@ -635,12 +714,12 @@
 
 .hiddenWinner {
   position: relative;
-  left: 2em;
-  bottom: 3em;
+  left: 4em;
+  bottom: 3.5em;
   height: 1em;
   width: 1em;
-  background-color: #6088ee;
-  border: .2em solid black;
+  border: .15em solid black;
+  background-color: #dcebf5;
   border-radius: 5em;
   z-index: 1;
 }
@@ -648,4 +727,18 @@
 .exitWinner {
   width: 3em;
   height: 2em;
+  position: relative;
+  right: -200px;
+  top: 215px;
+  z-index: 10;
+}
+
+.winnerBorder {
+  border: 0.5em solid black;
+  width: 32em;
+  height: 17em;
+  z-index: 1000;
+  position: fixed;
+  right: 460px;
+  top: 197px;
 }

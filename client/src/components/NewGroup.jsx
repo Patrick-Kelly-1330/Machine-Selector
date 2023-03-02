@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup }) => {
+const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) => {
 
   //TODO: create dynamic list
   const [newTeam, setNewTeam] = useState([]);
@@ -32,6 +32,12 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup }) => {
       <div>
         <div className="newGroupCongifurationContainer">
          <div className="groupCreation">
+           <div className="exitContainer">
+             <button className="exit" value="x" onClick={() => {
+                onNewGroup();
+                onShowConfig();
+              }}/>
+           </div>
            <form className="newNameForm">
             <label>New Group Name
               <input type="text" onChange={onNewTeamName}/>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Gears from '../../dist/gears.png';
 
 const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers, onStart, onNewGroup }) => {
 
@@ -8,7 +9,8 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
       <div>
         <div className="configurationContainer">
           <div className="groupSelection">
-            <h1>select a group</h1>
+            <img className="gearIcon" src={Gears}/>
+            <h3 clasName="testingFont">Select a Group</h3>
             <select className="groupOptions" onChange={(e) => getGroupMembers(e)}>
               <option selected>Groups</option>{
               groupList.map((groupName) => {
@@ -20,7 +22,7 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
               onShowConfig();
               onNewGroup();
             }}>or add a new team here</p>
-            <h1>Select Duration of Animation</h1>
+            <h3>Select Duration of Animation</h3>
             <select className="durationOptions">
               <option>5 seconds</option>
               <option>10 seconds</option>
