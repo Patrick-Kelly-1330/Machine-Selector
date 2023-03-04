@@ -375,13 +375,13 @@ body {
 
   30% {
     transform:
-    translateY(590%)
+    translateY(615%)
     translateX(-360%)
   }
 
   to {
     transform:
-    translateY(590%)
+    translateY(620%)
     translateX(-720%)
   }
 }

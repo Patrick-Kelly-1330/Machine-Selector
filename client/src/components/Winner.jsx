@@ -12,6 +12,7 @@ const Winner = ({ winnerVisible, winner, setWinnerVisible}) => {
             </div>
             <button className="exitWinner" onClick={ () => {
                 setWinnerVisible(!winnerVisible)
+                window.location.reload(false);
               }}>exit</button>
           </div>
         </div>

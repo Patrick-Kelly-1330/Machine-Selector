@@ -128,7 +128,7 @@ const App = () => {
     if (winner.length > 0) {
       setTimeout(() => {
        setWinnerVisible(!winnerVisible);
-     }, 1200);
+     }, 1100);
     }
   }, [winner])
 
