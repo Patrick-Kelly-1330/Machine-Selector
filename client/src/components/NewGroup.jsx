@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) => {
 
-  //TODO: create dynamic list
   const [newTeam, setNewTeam] = useState([]);
   const [newTeamName, setNewTeamName] = useState('');
   const [newName, setNewName] = useState('');
@@ -32,33 +31,44 @@ const NewGroup = ({ newGroupVisible, onNewGroup, onCreateGroup, onShowConfig }) 
       <div>
         <div className="newGroupCongifurationContainer">
          <div className="groupCreation">
+           <div className="configHeader">
+             <div className="aTrail"/>
+             <div className="bTrail"/>
+             <div className="cTrail"/>
+             <div className="dTrail"/>
+             <div className="eTrail"/>
+             <div className="fTrail"/>
+             <div className="gTrail"/>
+           </div>
            <div className="exitContainer">
-             <button className="submit" className="exit" value="x" onClick={() => {
+             <input type="submit" className="submit exit" value="x" onClick={() => {
                 onNewGroup();
                 onShowConfig();
               }}/>
            </div>
            <form className="newNameForm">
-            <label>New Group Name
-              <input type="text" onChange={onNewTeamName}/>
+            <label className="newName">
+              <div className="testingFont">New Group Name</div>
+              <input className="textInput" type="text" onChange={onNewTeamName}/>
             </label>
            </form>
            <form className="newMemberForm">
-            <label>Group Member
-              <input type="text" onChange={onName}/>
+            <label className="newMember">
+              <div  className="testingFont">New Group Member</div>
+              <input className="textInput" type="text" onChange={onName}/>
             </label>
             <input className="submit" type="submit" value="add new member" onClick={onNewMember}/>
            </form>
-           <h1>Current Group</h1>
+           <div className="testingFont">Current Group</div>
            <div className="newGroupList">{
              newTeam.map((member) => {
-              return <div>{member}</div>
+              return <div className="newName">{member}</div>
              })
            }
            </div>
            <form className="createNewGroup">
-            <label>Create Group
-              <input className="submit" type="submit" onClick={(e) => {
+            <label>
+              <input value="Create Group" className="submitGroup" type="submit" onClick={(e) => {
                 onCreateGroup(e, groupDetails);
                 onNewGroup();
               }}/>

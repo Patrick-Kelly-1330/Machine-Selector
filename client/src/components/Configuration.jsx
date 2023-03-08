@@ -9,8 +9,17 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
       <div>
         <div className="configurationContainer">
           <div className="groupSelection">
+            <div className="configHeader">
+              <div className="aTrail"/>
+              <div className="bTrail"/>
+              <div className="cTrail"/>
+              <div className="dTrail"/>
+              <div className="eTrail"/>
+              <div className="fTrail"/>
+              <div className="gTrail"/>
+            </div>
             <img className="gearIcon" src={Gears}/>
-            <h3 clasName="testingFont">Select a Group</h3>
+            <div className="testingFont">Select a Group</div>
             <select className="groupOptions" onChange={(e) => getGroupMembers(e)}>
               <option selected>Groups</option>{
               groupList.map((groupName) => {
@@ -22,7 +31,7 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
               onShowConfig();
               onNewGroup();
             }}>or add a new team here</p>
-            <h3>Select Duration of Animation</h3>
+            <div className="testingFont">Select Duration of Animation</div>
             <select className="durationOptions">
               <option>5 seconds</option>
               <option>10 seconds</option>

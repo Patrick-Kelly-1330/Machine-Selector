@@ -1,6 +1,7 @@
 *{
   margin:0;
   padding:0;
+  font-family: 'Poppins', sans-serif;
 }
 
 p {
@@ -11,6 +12,7 @@ p {
 body {
   background-color: #0b0a1f;
 }
+
 
 /* ====================================
    Variables
@@ -56,24 +58,61 @@ body {
   font-size: 15px;
 }
 
-.newSelection:hover, button:hover, .submit:hover {
+.newSelection:hover, button:hover, .submitGroup:hover, select:hover, .exit:hover, .submit:hover {
   background-color: #bdc0cd;
   cursor: pointer;
 }
+
+.submitGroup{
+  padding: .5em;
+  border-radius: .5em;
+  background-color: #8D92A4;
+  border-radius: .2em;
+  border: .1em solid #8D92A4;
+  color: #f7f7f7;
+}
+
+.submit {
+  padding: .15em .4em;
+  border-radius: .5em;
+  background-color: #8D92A4;
+  border-radius: .2em;
+  border: .1em solid #8D92A4;
+  color: #f7f7f7;
+}
+
+.textInput {
+  background-color: #8D92A4;
+  border: none;
+}
+
+.textInput:focus {
+  outline: none;
+}
+
+
 
 /* ====================================
    Configuration Modals
    ====================================
 */
 
+/*
+gear dark: #080D1D
+dark grey: #55596A
+light grey: #8D92A4
+
+*/
+
 .testingFont {
   margin: 0;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
+  color: #f7f7f7;
 }
 
 .configurationContainer, .newGroupCongifurationContainer {
-  background-color: rgb(129, 127, 148, 0.8);
+  background-color: #080D1D;
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -83,6 +122,128 @@ body {
   top: 0;
   z-index: 9999;
 }
+
+.groupOptions, .durationOptions, .startAnimation {
+  background-color: #8D92A4;
+  border-radius: .2em;
+  border: .1em solid #8D92A4;
+  color: #f7f7f7;
+}
+
+.addNewTeamLink {
+  color: #080D1D;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.addNewTeamLink:hover {
+  cursor: pointer;
+  color: #3c3c3d;
+}
+
+.configHeader {
+  margin: 1em 0 0 0;
+  height: 2em;
+  background-color: #8D92A4;
+  display: flex;
+}
+
+.aTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .3s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.bTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .4s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.cTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .5s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.dTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .6s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.eTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .7s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.fTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .8s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+.gTrail {
+  background-color: #8D92A4;
+  animation-duration: 3s;
+  animation-delay: .9s;
+  animation-name: highlightTrail;
+  animation-iteration-count: infinite;
+  width: 35em;
+}
+
+@keyframes highlightTrail {
+  from {
+    background-color: #8D92A4;
+    border-top: .1em solid #495067;
+    border-bottom: .1em solid #495067;
+  }
+
+  25% {
+    background-color: #50535d;
+    border-top: .1em solid #495067;
+    border-bottom: .1em solid #495067;
+  }
+
+  50% {
+    background-color: #25262b;
+    border-top: .1em solid #868892;
+    border-bottom: .1em solid #868892;
+  }
+
+  75% {
+    background-color: #50535d;
+    border-top: .1em solid #495067;
+    border-bottom: .1em solid #495067;
+  }
+
+  to {
+    background-color: #8D92A4;
+    border-top: .1em solid #495067;
+    border-bottom: .1em solid #495067;
+  }
+}
+
+
 .congratulationsContainer {
   background-color: #0b0a1f;
   width: 100%;
@@ -96,7 +257,7 @@ body {
 }
 
 
-.groupSelection, .groupCreation {
+.groupSelection {
   width: 50em;
   height: 30em;
   position: fixed;
@@ -104,17 +265,43 @@ body {
   top: 200px;
   right: 0;
   bottom: 0;
-  background-color: #f7f7f7;
+  background-color: #55596A;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: .5em;
-  border: .1em solid #161160;
-  row-gap: 1em;
+  border: .1em solid #f7f7f7;
+  row-gap: .5em;
   margin: 0 4em;
   z-index: 3;
   text-align: center;
   backdrop-filter: blur(10px);
+}
+
+.groupCreation {
+  width: 40em;
+  height: 24em;
+  position: fixed;
+  left: 280px;
+  top: 200px;
+  right: 0;
+  bottom: 0;
+  background-color: #55596A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: .5em;
+  border: .1em solid #f7f7f7;
+  row-gap: 1.5em;
+  margin: 0 4em;
+  z-index: 3;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.newName {
+  color: #f7f7f7;
+  font-size: 1em;
 }
 
 .winnerSelection{
@@ -146,39 +333,46 @@ body {
 
 .startAnimation {
   height: 3em;
-  margin: 0 20em;
+  margin: 0 21em 2em 21em;
   text-align: center;
   vertical-align: baseline;
+  border: 0 0 .5em 0;
 }
 
 .newGroupList {
   list-style-type: none;
 }
 
-.addNewTeamLink {
-  color: #797878;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.addNewTeamLink:hover {
-  cursor: pointer;
-  color: #3c3c3d;
-}
-
 .exitContainer {
   display: flex;
   justify-content: flex-end;
-
+  padding: 0 2em;
 }
 
 .exit {
-  border: .2em solid #161160;
+  border: .1em solid #818185;
   width: 2em;
   height: 2em;
   border-radius: 1.5em;
-  font-size: 10px;
+  font-size: 15px;
 }
+
+.newMemberForm, .newNameForm {
+  display: flex;
+  column-gap: 0.5em;
+  justify-content: center;
+}
+
+.newName, .newMember {
+  display: flex;
+  column-gap: 0.5em;
+  justify-content: center;
+}
+
+.createNewGroup {
+  margin: 0 0 2em 0;
+}
+
 
 /* ====================================
    Group Members
@@ -187,9 +381,7 @@ body {
 
 .groupMemberContainer {
   padding: 0 5em 4em 0;
-  /* background-color: rgb(184, 197, 246); */
   background-color: #3b3f4f;
-  /* background-color: rgb(109, 109, 112); */
   z-index: 3;
 }
 
@@ -239,8 +431,10 @@ body {
 .gearIcon {
   width: 260px;
   width: 260px;
-  margin: 1em 16.5em 0;
-  opacity: 45%;
+  margin: .3em 16.5em 0;
+  opacity: 70%;
+  border: .1em solid #f7f7f7;
+  border-radius: .5em;
 }
 
 /* ====================================
@@ -357,7 +551,31 @@ body {
 
   5% {
     transform:
+    translateY(1%)
+    translateX(-196%)
+  }
+
+  6% {
+    transform:
+    translateY(2%)
+    translateX(-197%)
+  }
+
+  7% {
+    transform:
     translateY(3%)
+    translateX(-198%)
+  }
+
+  8% {
+    transform:
+    translateY(4%)
+    translateX(-199%)
+  }
+
+  9% {
+    transform:
+    translateY(5%)
     translateX(-200%)
   }
 
@@ -645,14 +863,14 @@ body {
     transform:
     translate(0px, 0px);
   }
-  8% {
+  7% {
     transform:
-    translate(-60px, 0px);
+    translate(-55px, 0px);
   }
 
   14% {
     transform:
-    translate(-130px, 110px);
+    translate(-130px, 100px);
   }
 
   21% {
@@ -692,7 +910,7 @@ body {
 
   70% {
     transform:
-    translate(-100px, 130px);
+    translate(-100px, 118px);
   }
 
   77% {
@@ -702,7 +920,7 @@ body {
 
   84% {
     transform:
-    translate(60px, 10px);
+    translate(60px, 23px);
   }
 
   91% {
@@ -788,4 +1006,115 @@ body {
   position: fixed;
   right: 460px;
   top: 197px;
+}
+
+.winnerConfetti {
+  display: flex;
+}
+
+.aC {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(0, 0, 255, .4);
+  animation-delay: .2s;
+  z-index: 4;
+  animation-duration: 3s;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+.bC {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(140, 0, 255, 0.4);
+  animation-delay: .3s;
+  z-index: 4;
+  animation-duration: 3s;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+.cC {
+  width: 20px;
+  height: 20px;
+  animation-duration: 3s;
+  background-color: rgba(98, 0, 255, 0.4);
+  animation-delay: .4s;
+  z-index: 4;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+
+.dC {
+  width: 20px;
+  height: 20px;
+  animation-duration: 3s;
+  background-color: rgba(0, 106, 255, 0.4);
+  animation-delay: .5s;
+  z-index: 4;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+
+.eC {
+  width: 20px;
+  height: 20px;
+  animation-duration: 3s;
+  background-color: rgb(0, 0, 255, .4);
+  animation-delay: .6s;
+  z-index: 4;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+
+.fC {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(200, 0, 255, 0.4);
+  animation-delay: .7s;
+  z-index: 4;
+  animation-duration: 3s;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+
+.gC {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 98, 255, 0.4);
+  animation-delay: .8s;
+  animation-duration: 3s;
+  z-index: 4;
+  animation-name: winningFlip;
+  animation-iteration-count: infinite;
+}
+
+@keyframes winningFlip {
+  0% {
+    transform:
+      rotate(0)
+      translate(0px, 20px); /* 130 or 90 */
+  }
+
+  20% {
+    transform:
+      translate(150px, -60px) /* 130 or 90 */
+      rotate(180deg);
+  }
+
+  40% {
+    transform:
+      translate(330px, 40px)
+      rotate(270deg);
+  }
+
+  50% {
+    transform:
+      translate(240px, 140px)
+      rotate(-270deg);
+  }
+
+  100% {
+    transform:
+      translate(140px, 140px)
+      rotate(-540deg);
+  }
 }
