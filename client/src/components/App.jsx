@@ -49,9 +49,8 @@ const App = () => {
 
   const onStart = () => {
     setTimeout(() => {
-      const randomeInteger = Math.floor(Math.random() * names.length);
-      const winningMember = names[randomeInteger];
-      console.log('first ', winningMember);
+      const randomInteger = Math.floor(Math.random() * names.length);
+      const winningMember = names[randomInteger];
       setWinner(winningMember);
       const findWinnerBucket = document.getElementById(winningMember);
       const winningBall = document.getElementById("rampBall");
@@ -128,7 +127,7 @@ const App = () => {
     if (winner.length > 0) {
       setTimeout(() => {
        setWinnerVisible(!winnerVisible);
-     }, 1100);
+     }, 200);
     }
   }, [winner])
 

@@ -40,7 +40,7 @@ const Configuration = ({ configVisible, groupList, onShowConfig, getGroupMembers
             <button className="startAnimation" onClick={ () => {
               onShowConfig();
               onStart();
-            }}>Start!</button>
+            }}>START</button>
           </div>
         </div>
       </div>

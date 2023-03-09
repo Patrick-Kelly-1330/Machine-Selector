@@ -56,6 +56,7 @@ body {
   background-color: #e5e8f5;
   color: #0b0a1f;
   font-size: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .newSelection:hover, button:hover, .submitGroup:hover, select:hover, .exit:hover, .submit:hover {
@@ -106,7 +107,7 @@ light grey: #8D92A4
 
 .testingFont {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #f7f7f7;
 }
@@ -333,7 +334,7 @@ light grey: #8D92A4
 
 .startAnimation {
   height: 3em;
-  margin: 0 21em 2em 21em;
+  margin: 1em 21em 2em 21em;
   text-align: center;
   vertical-align: baseline;
   border: 0 0 .5em 0;
